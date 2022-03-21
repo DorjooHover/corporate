@@ -71,3 +71,105 @@
     }
 }
 
+.navbar {
+    flex: 3;
+}
+.header_wrapper {
+    overflow-x: hidden;
+}
+.splide__arrow svg {
+    fill: white;
+    height: 1.5rem;
+}
+.splide__arrow--next {
+    right: 5%;
+}
+.splide__arrow--prev {
+    left: 5%;
+}
+.scratches {
+    height: 1px;
+}
+.splide__pagination {
+    top: 50%;
+    bottom: auto;
+    left: auto;
+    right: 2.5%;
+    flex-direction: column;
+    padding: 0;
+    transform: translate(50%, -50%);
+}
+.splide__pagination__page {
+    fill: white;
+    background: #fff;
+}
+.bg {
+    background-image: url("../../public/img/bg.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.room_wrapper,
+.service_wrapper,
+.about_wrapper, .event_wrapper {
+    width: 80%;
+    margin: auto;
+}
+.room_wrapper .splide__arrow--next {
+    right: -5%;
+}
+.room_wrapper .splide__arrow--prev {
+    left: -5%;
+}
+.testimonial_wrapper .splide__arrow--next {
+    right: -10%;
+}
+.testimonial_wrapper .splide__arrow--prev {
+    left: -10%;
+}
+.room_wrapper .splide__pagination,
+.testimonial_wrapper .splide__pagination {
+    display: none;
+}
+.bg_main {
+    background: #071522;
+}
+.service_1 {
+    background-image: url("../../public/img/service/bar.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 30vw;
+}
+.service_2 {
+    background-image: url("../../public/img/service/spa.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+.service_3 {
+    background-image: url("../../public/img/service/event.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+.service_4 {
+    background-image: url("../../public/img/service/health.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+.testimonial {
+    background-image: url("../../public/img/t_bg.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+.room_bg {
+    background: rgba($color: #fff, $alpha: 0.8);
+}
+.room_price {
+    font-size: 0.6rem;
+}
+
+.service {
+    width: 85%;
+    margin: auto;
+}
+.bg_event {
+    background-color: #F6F7FB;
+}

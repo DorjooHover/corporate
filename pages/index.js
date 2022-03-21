@@ -45,13 +45,7 @@ export default function Home() {
           <div className="flex flex-col place_4">
             <div className="relative">
               <div className="overflow-hidden">
-                <Image
-                  src={"/corp4.svg"}
-                  alt="corporate"
-                  width={442}
-                  height={943}
-                  layout="fill"
-                />
+                <Image src={"/corp4.svg"} alt="corporate" layout="fill" />
               </div>
               <span className="absolute inset-0 z-10 opacity-50 bg-black"></span>
             </div>
