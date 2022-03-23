@@ -1,175 +1,202 @@
 @import "~tailwindcss/base";
 @import "~tailwindcss/components";
 @import "~tailwindcss/utilities";
-@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;500;600;700&display=swap");
 
 * {
-    font-family: 'Brygada 1918', serif;
+     font-family: "Brygada 1918", serif;
+     scroll-behavior: smooth;
 }
 .bg {
-    background-color: #0c2b44;
+     background-color: #0c2b44;
 }
 .bg_dark {
-    background-color: #052338;
+     background-color: #052338;
 }
 .bg_dark_green {
-    background-color: #13251F;
+     background-color: #13251f;
 }
 .current_color {
-    color: #FFEEC6;
+     color: #ffeec6;
 }
-.admin{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.admin {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
 }
 .dashboard {
-    flex:4;
-}
-.place {
-    margin: 0 3%;
-    transition: 0.5s;
-    z-index: 10;
-    height: 94%;
-}
-.place_1, .place_2, .place_3 {
-    display:none;
-}
-.place_1, .place_2, .place_3, .place_4 {
-    position: relative;
-    // height: 94%;
-    width: 25%;
-    transition: 0.5s all;
-    overflow-y: hidden;
-    span {
-        transition: 0.5s all;
-    }
-    &:hover {
-        width: 28%;
-        height: unset;
-        .place {
-            margin-left: 0;
-        }
-    }
-    
-}
-.place_item {
-    margin: 0 3%;
-    height: 6%;
-    display: flex;
-    &_1, &_2, &_3 {
-        display: none;
-    }
-    &_1, &_2, &_3, &_4 {
-        position: relative;
-        z-index: 40;
-        .justify-between {
-            background-color: rgba($color: #000000, $alpha: 0.6);
-        }
-        transform: translateY(-50%);
-    }
+     flex: 4;
 }
 
 .navbar {
-    flex: 3;
+     flex: 3;
 }
 .header_wrapper {
-    overflow-x: hidden;
+     overflow-x: hidden;
 }
 .splide__arrow svg {
-    fill: white;
-    height: 1.5rem;
+     fill: white;
+     height: 1.5rem;
 }
 .splide__arrow--next {
-    right: 5%;
+     right: 5%;
 }
 .splide__arrow--prev {
-    left: 5%;
+     left: 5%;
 }
 .scratches {
-    height: 1px;
+     height: 1px;
 }
 .splide__pagination {
-    top: 50%;
-    bottom: auto;
-    left: auto;
-    right: 2.5%;
-    flex-direction: column;
-    padding: 0;
-    transform: translate(50%, -50%);
+     top: 50%;
+     bottom: auto;
+     left: auto;
+     right: 2.5%;
+     flex-direction: column;
+     padding: 0;
+     transform: translate(50%, -50%);
 }
 .splide__pagination__page {
-    fill: white;
-    background: #fff;
+     fill: white;
+     background: #fff;
 }
 .bg {
-    background-image: url("../../public/img/bg.jfif");
-    background-repeat: no-repeat;
-    background-size: cover;
+     background-image: url("../../public/img/bg.jfif");
+     background-repeat: no-repeat;
+     background-size: cover;
 }
 .room_wrapper,
 .service_wrapper,
-.about_wrapper, .event_wrapper {
-    width: 80%;
-    margin: auto;
+.about_wrapper,
+.event_wrapper {
+     width: 80%;
+     margin: auto;
 }
 .room_wrapper .splide__arrow--next {
-    right: -5%;
+     right: -5%;
 }
 .room_wrapper .splide__arrow--prev {
-    left: -5%;
+     left: -5%;
 }
 .testimonial_wrapper .splide__arrow--next {
-    right: -10%;
+     right: -10%;
 }
 .testimonial_wrapper .splide__arrow--prev {
-    left: -10%;
+     left: -10%;
 }
 .room_wrapper .splide__pagination,
 .testimonial_wrapper .splide__pagination {
-    display: none;
+     display: none;
 }
 .bg_main {
-    background: #071522;
+     background: #071522;
 }
 .service_1 {
-    background-image: url("../../public/img/service/bar.jpg");
-    background-size: cover;
-    background-position: center center;
-    height: 30vw;
+     background-image: url("../../public/img/service/bar.jpg");
+     background-size: cover;
+     background-position: center center;
+     height: 30vw;
 }
 .service_2 {
-    background-image: url("../../public/img/service/spa.jpg");
-    background-size: cover;
-    background-position: center center;
+     background-image: url("../../public/img/service/spa.jpg");
+     background-size: cover;
+     background-position: center center;
 }
 .service_3 {
-    background-image: url("../../public/img/service/event.jpg");
-    background-size: cover;
-    background-position: center center;
+     background-image: url("../../public/img/service/event.jpg");
+     background-size: cover;
+     background-position: center center;
 }
 .service_4 {
-    background-image: url("../../public/img/service/health.jpg");
-    background-size: cover;
-    background-position: center center;
+     background-image: url("../../public/img/service/health.jpg");
+     background-size: cover;
+     background-position: center center;
 }
 .testimonial {
-    background-image: url("../../public/img/t_bg.jpg");
-    background-size: cover;
-    background-position: center center;
+     background-image: url("../../public/img/t_bg.jpg");
+     background-size: cover;
+     background-position: center center;
 }
 .room_bg {
-    background: rgba($color: #fff, $alpha: 0.8);
+     background: rgba($color: #fff, $alpha: 0.8);
 }
 .room_price {
-    font-size: 0.6rem;
+     font-size: 0.6rem;
 }
 
 .service {
-    width: 85%;
-    margin: auto;
+     width: 85%;
+     margin: auto;
 }
 .bg_event {
-    background-color: #F6F7FB;
+     background-color: #f6f7fb;
+}
+.place {
+     width: 90%;
+     margin: 0 5%;
+     &_1,
+     &_2,
+     &_3,
+     &_4 {
+          width: 25%;
+          position: relative;
+          transition: 0.5s all;
+          cursor: pointer;
+          .detail {
+               background: rgba(0, 0, 0, 0.6);
+          }
+          span {
+               height: 92vh;
+               width: 100%;
+               display: inline-block;
+               background-position: center center;
+               background-repeat: no-repeat;
+               background-size: cover;
+               transition: 0.5s all;
+          }
+          &_detail {
+               position: absolute;
+               height: 16vh;
+               bottom: 0;
+               transform: translateY(50%);
+          }
+          &:hover {
+               width: 30%;
+               transition: 0.5s all;
+               span {
+                    transition: 0.5s all;
+                    opacity: 1;
+               }
+               .place {
+                    width: 95%;
+                    margin: 0;
+               }
+          }
+     }
+     &_1 {
+          span {
+               background-image: url("../../public/corp1.svg");
+          }
+     }
+     &_2 {
+          span {
+               background-image: url("../../public/corp2.svg");
+          }
+     }
+     &_3 {
+          span {
+               background-image: url("../../public/corp3.svg");
+          }
+     }
+     &_4 {
+          span {
+               background-image: url("../../public/corp4.svg");
+          }
+     }
+}
+.social {
+     top: 10%;
+     right: 2.5%;
+     transform: translateX(50%);
 }

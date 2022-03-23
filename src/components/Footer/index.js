@@ -55,7 +55,7 @@ export default function Footer() {
             />
           </div>
         </div>
-        <div className="w-auto w-20 mr-8">
+        <div className="w-auto w-20 ">
           <Image
             src="/img/logo.png"
             alt="logo"
