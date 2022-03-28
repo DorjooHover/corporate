@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-export default function Navbar() {
+import { DarkMode } from "@mui/icons-material";
+export default function Navbar({ data }) {
   return (
     <div className="flex justify-between nav_bg fixed w-full px-10 py-3 top-0 left-0 z-40">
       <div className="flex items-center">
@@ -17,50 +18,64 @@ export default function Navbar() {
           <li className="mx-2">
             <Link href={"/1"}>
               <a className="px-3 py-2 btn_bg text-white uppercase font-xl">
-                home
+                нүүр
               </a>
             </Link>
           </li>
           <li className="mx-2">
             <Link href={"/1#room"}>
               <a className="px-3 py-2 btn_bg text-white uppercase font-xl">
-                room
+                өрөө
               </a>
             </Link>
           </li>
           <li className="mx-2">
             <Link href={"/1#service"}>
               <a className="px-3 py-2 btn_bg text-white uppercase font-xl">
-                service
+                үйлчилгээ
               </a>
             </Link>
           </li>
           <li className="mx-2">
             <Link href={"/1#about"}>
               <a className="px-3 py-2 btn_bg text-white uppercase font-xl">
-                about
+                бидний тухай
               </a>
             </Link>
           </li>
           <li className="mx-2">
             <Link href={"/1#event"}>
               <a className="px-3 py-2 btn_bg text-white uppercase font-xl">
-                event
+                арга хэмжээ
               </a>
             </Link>
           </li>
           <li className="mx-2">
             <Link href={"/1#footer"}>
               <a className="px-3 py-2 btn_bg text-white uppercase font-xl">
-                contact
+                холбоо барих
               </a>
             </Link>
           </li>
         </ul>
       </div>
-      <div>
-        <h1>weither</h1>
-      </div>
+      {data && (
+        <div className="flex items-center text-white">
+          <div>
+            {data.weather[0] && (
+              <img
+                src={`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`}
+                alt="index"
+              />
+            )}
+          </div>
+          <div className="mx-2">
+            {Math.round(data.temp)}
+            <sup>o</sup>C
+          </div>
+          {data.weather[0] && <div>{data.weather[0].main}</div>}
+        </div>
+      )}
     </div>
   );
 }

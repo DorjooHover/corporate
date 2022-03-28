@@ -1,15 +1,18 @@
-const path = require('path')
+const path = require("path");
 module.exports = {
-	trailingSlash: false,
-	webpackDevMiddleware: config => {
-		config.watchOptions = {
-			poll: 1000,
-			aggregateTimeout: 300
-		}
+  trailingSlash: false,
+  sassOptions: {
+    includePaths: [path.join(__dirname, "styles")],
+  },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.md$/,
+      use: "raw-loader",
+    });
+    return config;
+  },
 
-		return config
-	},
-	sassOptions: {
-		includePaths: [path.join(__dirname, 'styles')]
-	}
-}
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
+};

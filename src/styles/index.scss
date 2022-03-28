@@ -3,15 +3,32 @@
 @import "~tailwindcss/utilities";
 @import url("https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;500;600;700&display=swap");
 
+:root {
+     --main-color: #0036cc;
+     --second-color: #b58e3e;
+     --third-color: #f6f7fb;
+}
 * {
      font-family: "Brygada 1918", serif;
      scroll-behavior: smooth;
 }
-.bg {
-     background-color: #0c2b44;
+.bg_color {
+     background-color: var(--main-color);
+}
+.bg_color_1 {
+     background-color: var(--second-color);
+}
+.bg_color_2 {
+     background-color: var(--third-color);
 }
 .bg_dark {
      background-color: #052338;
+}
+.text_color {
+     color: var(--main-color)
+}
+.text_color_1 {
+     color: var(--second-color)
 }
 .bg_dark_green {
      background-color: #13251f;
@@ -31,6 +48,9 @@
 
 .navbar {
      flex: 3;
+}
+.nav_bg {
+     background-color: rgba($color: #000, $alpha: 0.3);
 }
 .header_wrapper {
      overflow-x: hidden;
@@ -67,11 +87,21 @@
      background-size: cover;
 }
 .room_wrapper,
-.service_wrapper,
 .about_wrapper,
-.event_wrapper {
+.event_wrapper,
+.footer_wrapper {
      width: 80%;
      margin: auto;
+}
+ 
+
+.service {
+     width:90%;
+     margin: auto;
+     &_wrapper {
+          width: 90%;
+          margin: auto;
+     }
 }
 .room_wrapper .splide__arrow--next {
      right: -5%;
@@ -104,15 +134,42 @@
      background-position: center center;
 }
 .service_3 {
-     background-image: url("../../public/img/service/event.jpg");
-     background-size: cover;
-     background-position: center center;
-}
-.service_4 {
      background-image: url("../../public/img/service/health.jpg");
      background-size: cover;
      background-position: center center;
 }
+.service_4 {
+     background-image: url("../../public/img/service/event.jpg");
+     background-size: cover;
+     background-position: center center;
+}
+
+.service_detail_1, 
+.service_detail_2, 
+.service_detail_3, 
+.service_detail_4 
+{
+     top:50%;
+     left:50%;
+     transform: translate(-50%, -50%);
+     transition: 0.5s all ease-in-out;
+     background-size: cover;
+     background-position: center center;
+}
+.service_detail_1 {
+     background-image: url('../../public/img/service/bar.jpg');
+}
+.service_detail_2 {
+     background-image: url('../../public/img/service/spa.jpg');
+}
+.service_detail_3 {
+     background-image: url('../../public/img/service/health.jpg');
+}
+.service_detail_4 {
+     background-image: url('../../public/img/service/event.jpg');
+}
+
+
 .testimonial {
      background-image: url("../../public/img/t_bg.jpg");
      background-size: cover;
@@ -125,10 +182,6 @@
      font-size: 0.6rem;
 }
 
-.service {
-     width: 85%;
-     margin: auto;
-}
 .bg_event {
      background-color: #f6f7fb;
 }
@@ -157,6 +210,7 @@
           }
           &_detail {
                position: absolute;
+               width:100%;
                height: 16vh;
                bottom: 0;
                transform: translateY(50%);

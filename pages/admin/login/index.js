@@ -8,13 +8,21 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [admin, setAdmin] = useState([]);
   const [alert, setAlert] = useState("");
+  const [status, setStatus] = useState(false);
   const router = useRouter();
   const loadAdmin = async () => {
     try {
       let resAdmin = await axios.get(`/api/admin`, {
-        params: { username: name },
+        params: { username: name, pid: router.query.pid, password: password },
       });
       setAdmin(resAdmin.data);
+      setAlert(resAdmin.data.message);
+      if (resAdmin.data.status == 0) {
+        setStatus(false);
+      } else {
+        router.push("/admin/dashboard");
+        setStatus(true);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -22,13 +30,6 @@ export default function Login() {
   const handleAdmin = (e) => {
     e.preventDefault();
     loadAdmin();
-
-    admin[0] !== undefined && admin[0].password == password
-      ? router.push({
-          pathname: "/admin/dashboard",
-          query: { pid: admin[0].place_id },
-        })
-      : setAlert("Нэвтрэх нэр эсвэл нууц үг буруу байна.");
   };
   return (
     <>
@@ -37,8 +38,13 @@ export default function Login() {
       </Head>
       <div className="bg h-screen w-screen absolute inset-0">
         <form action="" className="admin" onSubmit={handleAdmin}>
-          {alert && (
+          {alert && status && (
             <Alert severity="error" className="mb-4">
+              {alert}
+            </Alert>
+          )}
+          {alert && !status && (
+            <Alert severity="success" className="mb-4">
               {alert}
             </Alert>
           )}

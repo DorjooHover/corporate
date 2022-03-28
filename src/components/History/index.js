@@ -7,7 +7,7 @@ export default function History() {
                     </div>
                     <div className="absolute z-10">
                          <h3 className="uppercase text-xl font-medium">
-                              corporate hotel
+                              corporate hotel - <span className="text_color_1">2008</span>
                          </h3>
                     </div>
                </div>
