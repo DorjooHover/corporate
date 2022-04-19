@@ -12,6 +12,10 @@
      font-family: "Brygada 1918", serif;
      scroll-behavior: smooth;
 }
+
+.sidebar {
+     min-width: 300px;
+}
 .bg_color {
      background-color: var(--main-color);
 }
@@ -122,27 +126,7 @@
 .bg_main {
      background: #071522;
 }
-.service_1 {
-     background-image: url("../../public/img/service/bar.jpg");
-     background-size: cover;
-     background-position: center center;
-     height: 30vw;
-}
-.service_2 {
-     background-image: url("../../public/img/service/spa.jpg");
-     background-size: cover;
-     background-position: center center;
-}
-.service_3 {
-     background-image: url("../../public/img/service/health.jpg");
-     background-size: cover;
-     background-position: center center;
-}
-.service_4 {
-     background-image: url("../../public/img/service/event.jpg");
-     background-size: cover;
-     background-position: center center;
-}
+
 
 .service_detail_1, 
 .service_detail_2, 
@@ -156,9 +140,7 @@
      background-size: cover;
      background-position: center center;
 }
-.service_detail_1 {
-     background-image: url('../../public/img/service/bar.jpg');
-}
+
 .service_detail_2 {
      background-image: url('../../public/img/service/spa.jpg');
 }

@@ -23,8 +23,8 @@ export default function Main() {
   const [weather, setWeather] = useState([]);
   const [temp, setTemp] = useState();
   const [data, setData] = useState([]);
-
-  const loadWeather = async (req, res) => {
+  const [title, setTitle] = useState("The Corporate Hotel");
+  const loadWeather = async () => {
     try {
       let weather = await axios.get(
         `${api.base}weather?q=${"ulaanbaatar"}&units=metric&APPID=${api.key}`
@@ -32,7 +32,8 @@ export default function Main() {
       setTemp(weather.data.main.temp);
       setWeather(weather.data.weather);
 
-      let data = await axios.get("/api/main");
+      let data = await axios.get(`/api/main/${parseInt(router.query.pid) + 3}`);
+      setTitle(data.data.placeData[0].name);
       setData(data.data);
     } catch (error) {
       console.log(error);
@@ -44,6 +45,11 @@ export default function Main() {
   }, []);
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+      </Head>
       <Navbar data={{ weather, temp, pid }} />
       <Header data={data.headerData} />
       <div className="bg relative ">

@@ -10,7 +10,7 @@ import Image from "next/image";
 
 export default function Sidebar({ pid }) {
   return (
-    <div className="flex-1 bg_main h-screen">
+    <div className="flex-1 bg_main h-screen sidebar">
       <div className="w-10/12 mx-auto my-10">
         <div className="mb-4">
           <Image

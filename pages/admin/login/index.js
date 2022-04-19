@@ -17,10 +17,14 @@ export default function Login() {
       });
       setAdmin(resAdmin.data);
       setAlert(resAdmin.data.message);
+      console.log(resAdmin);
       if (resAdmin.data.status == 0) {
         setStatus(false);
+        router.push({
+          pathname: "/admin/dashboard",
+          query: { pid: router.query.pid },
+        });
       } else {
-        router.push("/admin/dashboard");
         setStatus(true);
       }
     } catch (error) {

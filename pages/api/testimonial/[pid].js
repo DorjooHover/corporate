@@ -1,10 +1,11 @@
 import nc from "next-connect";
 import {
-  createTestimonial,
-  updateTestimonial,
+  deleteTestimonial,
+  getAllTestimonial,
 } from "../../../controller/testimonial/testimonial";
 
 const handler = nc();
-handler.post(createTestimonial);
-handler.put(updateTestimonial);
+handler.get(getAllTestimonial);
+handler.delete(deleteTestimonial);
+
 export default handler;

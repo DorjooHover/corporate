@@ -1,10 +1,10 @@
 import nc from "next-connect";
 import {
-  createService,
-  updateService,
+  getAllService,
+  deleteService,
 } from "../../../controller/service/service";
-
 const handler = nc();
-handler.post(createService);
-handler.put(updateService);
+handler.get(getAllService);
+handler.delete(deleteService);
+
 export default handler;

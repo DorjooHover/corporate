@@ -22,11 +22,13 @@ export const Room = ({ data }) => {
               <>
                 <SplideSlide>
                   <div className="relative" key={d.place_room_id}>
-                    <div>
+                    <div className="h-48 overflow-hidden bg-cover flex items-center jusitfy-center">
                       <img src={d.img} alt="room" />
                     </div>
                     <div className="room_bg pt-3 px-4 pb-6">
-                      <h2 className="uppercase text-base text_color_1">{d.name}</h2>
+                      <h2 className="uppercase text-base text_color_1">
+                        {d.name}
+                      </h2>
                       <h6 className="mb-4 capitalize text-xs">{d.type}</h6>
                       <div className="flex items-center justify-between">
                         <button className="cursor-pointer uppercase text-white py-1 px-2 text-xs bg_main no-wrap">

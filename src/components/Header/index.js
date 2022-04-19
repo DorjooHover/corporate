@@ -18,7 +18,7 @@ export const Header = ({ data }) => {
           data.map((d) => {
             return (
               <>
-                <SplideSlide className="w-screen h-screen">
+                <SplideSlide className="w-screen h-screen" key={d.header_id}>
                   <div className="relative w-full h-full" key="d.header_id">
                     {/* <Image
                     src={"/img/header/img_1.jpg"}

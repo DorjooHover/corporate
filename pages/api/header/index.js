@@ -1,8 +1,8 @@
 import nc from "next-connect";
-import { createHeader, getHeader } from "../../../controller/header/header";
+import { createHeader, updateHeader } from "../../../controller/header/header";
 
 const handler = nc();
 handler.post(createHeader);
-handler.get(getHeader);
 
+handler.put(updateHeader)
 export default handler;

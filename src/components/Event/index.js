@@ -1,5 +1,4 @@
 export default function Event({ data }) {
-  console.log(data);
   return (
     <div className="flex flex-col mr-8 max-w-md ">
       <h6 className="uppercase mb-2 text-base text_color tracking-widest">

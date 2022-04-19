@@ -3,7 +3,6 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Image from "next/image";
 import { Star } from "@mui/icons-material";
 export const Testimonial = ({ data }) => {
-  console.log(data);
   return (
     <div className="testimonial_wrapper relative z-30" id="room">
       <Splide

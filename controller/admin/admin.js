@@ -1,7 +1,6 @@
 import { executeQuery } from "../../config/db";
 
 const getAdmin = async (req, res) => {
-  console.log(req.query.pid, req.query.username, req.query.password);
   try {
     let adminData = await executeQuery(
       `
@@ -21,5 +20,7 @@ const getAdmin = async (req, res) => {
     res.status(500).json({ message: err });
   }
 };
+
+
 
 export { getAdmin };
