@@ -5,43 +5,42 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { Box, Pagination } from "@mui/material";
 export default function Event() {
-  const [title, setTitle] = useState("");
-  const [place, setPlace] = useState("");
-  const [date, setDate] = useState("");
-  const [event, setEvent] = useState({place: '', title: '', day: '', month: ''})
+  const [event, setEvent] = useState({
+    place: "",
+    title: "",
+    day: "",
+    month: "",
+  });
   const router = useRouter();
-<<<<<<< HEAD
   const [isCreate, setIsCreate] = useState(true);
   const [data, setData] = useState([]);
   const [perPage, setPerPage] = useState();
   const [page, setPage] = useState(1);
   const [updateId, setUpdateId] = useState();
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const pid = parseInt(router.query.pid);
-=======
-  const pid = parseInt(router.query.pid);
-  const loadEvent = async(req, res) => {
+
+  const loadEvent = async (req, res) => {
     try {
-      let eventData = await axios.get('/api/event', {params: {pid}})
-      console.loh(eventData)
-      setEvent((event) => ({...event, place: eventData.data.place, title: eventData.data.title, day: eventData.data.day, month: eventData.data.month}))
+      let eventData = await axios.get("/api/event", { params: { pid } });
+      setEvent((event) => ({
+        ...event,
+        place: eventData.data.place,
+        title: eventData.data.title,
+        day: eventData.data.day,
+        month: eventData.data.month,
+      }));
       // setEvent((event) => ({...event, title: eventData.data.title}))
       // setEvent((event) => ({...event, day: eventData.data.day}))
       // setEvent((event) => ({...event, month: eventData.data.month}))
-      console.log(event)
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
   useEffect(() => {
-    loadEvent()
-  },[])
+    loadEvent();
+  }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
 
->>>>>>> 8abf87b33f067f61145fccf3363de479a3a119b5
     let res = await axios.post(`/api/event`, {
       params: {
         title: title,
@@ -54,9 +53,13 @@ export default function Event() {
         "Content-Type": "multipart/form-data",
       },
     });
-    setPlace("");
-    setDate("");
-    setTitle("");
+    setEvent((event) => ({
+      ...event,
+      place: "",
+      title: "",
+      day: "",
+      month: "",
+    }));
   };
 
   useEffect(() => {
@@ -89,10 +92,13 @@ export default function Event() {
         "Content-Type": "multipart/form-data",
       },
     });
-    console.log(res);
-    setPlace("");
-    setDate("");
-    setTitle("");
+    setEvent((event) => ({
+      ...event,
+      place: "",
+      title: "",
+      day: "",
+      month: "",
+    }));
   };
 
   const handleDelete = async (id) => {
