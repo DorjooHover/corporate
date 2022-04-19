@@ -127,9 +127,11 @@ export default function Event() {
                     type="text"
                     name="title"
                     id="title"
-                    value={title}
+                    value={event.title}
                     className="rounded-md px-2 py-1 border border-gray-800"
-                    onChange={(e) => setTitle(e.target.value)}
+                    onChange={(e) =>
+                      setEvent((event) => ({ ...event, title: e.target.value }))
+                    }
                   />
                 </div>
                 <div className="flex flex-col mb-4">
@@ -140,22 +142,41 @@ export default function Event() {
                     type="text"
                     name="place"
                     id="place"
-                    value={place}
+                    value={event.place}
                     className="rounded-md px-2 py-1 border border-gray-800"
-                    onChange={(e) => setPlace(e.target.value)}
+                    onChange={(e) =>
+                      setEvent((event) => ({ ...event, place: e.target.value }))
+                    }
                   />
                 </div>
                 <div className="flex flex-col mb-4">
                   <label htmlFor="date" className="font-medium mb-3 text-xl">
-                    Огноо
+                    Өдөр
                   </label>
                   <input
                     type="date"
                     name="date"
                     id="date"
-                    value={date}
+                    value={event.day}
                     className="rounded-md px-2 py-1 border border-gray-800"
-                    onChange={(e) => setDate(e.target.value)}
+                    onChange={(e) =>
+                      setEvent((event) => ({ ...event, day: e.target.value }))
+                    }
+                  />
+                </div>
+                <div className="flex flex-col mb-4">
+                  <label htmlFor="date" className="font-medium mb-3 text-xl">
+                    Сар
+                  </label>
+                  <input
+                    type="date"
+                    name="date"
+                    id="date"
+                    value={event.month}
+                    className="rounded-md px-2 py-1 border border-gray-800"
+                    onChange={(e) =>
+                      setEvent((event) => ({ ...event, month: e.target.value }))
+                    }
                   />
                 </div>
 
@@ -181,9 +202,11 @@ export default function Event() {
                     type="text"
                     name="title"
                     id="title"
-                    value={title}
+                    value={event.title}
                     className="rounded-md px-2 py-1 border border-gray-800"
-                    onChange={(e) => setTitle(e.target.value)}
+                    onChange={(e) =>
+                      setEvent((event) => ({ ...event, title: e.target.value }))
+                    }
                   />
                 </div>
                 <div className="flex flex-col mb-4">
@@ -194,22 +217,41 @@ export default function Event() {
                     type="text"
                     name="place"
                     id="place"
-                    value={place}
+                    value={event.place}
                     className="rounded-md px-2 py-1 border border-gray-800"
-                    onChange={(e) => setPlace(e.target.value)}
+                    onChange={(e) =>
+                      setEvent((event) => ({ ...event, place: e.target.value }))
+                    }
                   />
                 </div>
                 <div className="flex flex-col mb-4">
                   <label htmlFor="date" className="font-medium mb-3 text-xl">
-                    Огноо
+                    Өдөр
                   </label>
                   <input
                     type="date"
                     name="date"
                     id="date"
-                    value={date}
+                    value={event.day}
                     className="rounded-md px-2 py-1 border border-gray-800"
-                    onChange={(e) => setDate(e.target.value)}
+                    onChange={(e) =>
+                      setEvent((event) => ({ ...event, day: e.target.value }))
+                    }
+                  />
+                </div>
+                <div className="flex flex-col mb-4">
+                  <label htmlFor="date" className="font-medium mb-3 text-xl">
+                    Сар
+                  </label>
+                  <input
+                    type="date"
+                    name="date"
+                    id="date"
+                    value={event.month}
+                    className="rounded-md px-2 py-1 border border-gray-800"
+                    onChange={(e) =>
+                      setEvent((event) => ({ ...event, month: e.target.value }))
+                    }
                   />
                 </div>
 
