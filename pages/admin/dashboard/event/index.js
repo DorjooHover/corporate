@@ -8,7 +8,9 @@ export default function Event() {
   const [title, setTitle] = useState("");
   const [place, setPlace] = useState("");
   const [date, setDate] = useState("");
+  const [event, setEvent] = useState({place: '', title: '', day: '', month: ''})
   const router = useRouter();
+<<<<<<< HEAD
   const [isCreate, setIsCreate] = useState(true);
   const [data, setData] = useState([]);
   const [perPage, setPerPage] = useState();
@@ -17,6 +19,29 @@ export default function Event() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const pid = parseInt(router.query.pid);
+=======
+  const pid = parseInt(router.query.pid);
+  const loadEvent = async(req, res) => {
+    try {
+      let eventData = await axios.get('/api/event', {params: {pid}})
+      console.loh(eventData)
+      setEvent((event) => ({...event, place: eventData.data.place, title: eventData.data.title, day: eventData.data.day, month: eventData.data.month}))
+      // setEvent((event) => ({...event, title: eventData.data.title}))
+      // setEvent((event) => ({...event, day: eventData.data.day}))
+      // setEvent((event) => ({...event, month: eventData.data.month}))
+      console.log(event)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  useEffect(() => {
+    loadEvent()
+  },[])
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+
+>>>>>>> 8abf87b33f067f61145fccf3363de479a3a119b5
     let res = await axios.post(`/api/event`, {
       params: {
         title: title,
