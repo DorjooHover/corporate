@@ -1,8 +1,6 @@
 import { executeQuery } from "../../config/db";
 const getAllData = async (req, res) => {
-<<<<<<< HEAD
-  //   let { pid } = req.body.params;
-  console.log(req.query);
+
   try {
     const placeData = await executeQuery(
       `
@@ -19,72 +17,41 @@ const getAllData = async (req, res) => {
     `,
       [req.query.pid]
     );
+
     let roomData = await executeQuery(
       `
-=======
-     let { pid } = req.body.params;
-     try {
-          let headerData = await executeQuery(
-               `
-    select * from place_headers ph
-    inner join header h on h.header_id = ph.header_id
-    where ph.place_id = ?
-    `,
-               [pid]
-          );
-          let roomData = await executeQuery(
-               `
->>>>>>> 8abf87b33f067f61145fccf3363de479a3a119b5
           select * from place_rooms pr
 inner join room r on pr.room_id = r.room_id
 where pr.place_id = ? 
           `,
-<<<<<<< HEAD
+
       [req.query.pid]
     );
+
     let serviceData = await executeQuery(
       `
-=======
-               [pid]
-          );
-          let serviceData = await executeQuery(
-               `
->>>>>>> 8abf87b33f067f61145fccf3363de479a3a119b5
           select * from place_services ps
 inner join service s on ps.service_id = s.service_id
 where ps.place_id = ?
           `,
-<<<<<<< HEAD
+
       [req.query.pid]
     );
     let testimonialData = await executeQuery(
       `
-=======
-               [pid]
-          );
-          let testimonialData = await executeQuery(
-               `
->>>>>>> 8abf87b33f067f61145fccf3363de479a3a119b5
           select * from place_testimonials pt
 inner join testimonial t on pt.testimonial_id = t.testimonial_id
 where place_id = ?
           `,
-<<<<<<< HEAD
       [req.query.pid]
     );
+
     let eventData = await executeQuery(
       `
-=======
-               []
-          );
-          let eventData = await executeQuery(
-               `
->>>>>>> 8abf87b33f067f61145fccf3363de479a3a119b5
           select * from place_events pe
 inner join event e on pe.event_id = e.event_id
 where place_id = ?
           `,
-<<<<<<< HEAD
       [req.query.pid]
     );
     res.status(200).json({
@@ -98,20 +65,6 @@ where place_id = ?
   } catch (error) {
     res.status(500).json({ message: error });
   }
-=======
-               [pid]
-          );
-          res.status(200).json({
-               headerData: headerData,
-               roomData: roomData,
-               serviceData: serviceData,
-               testimonialData: testimonialData,
-               eventData: eventData,
-          });
-     } catch (error) {
-          res.status(500).json({ message: error });
-     }
->>>>>>> 8abf87b33f067f61145fccf3363de479a3a119b5
 };
 
 export { getAllData };
